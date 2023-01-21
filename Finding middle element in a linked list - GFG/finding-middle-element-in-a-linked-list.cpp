@@ -45,8 +45,9 @@ class Solution{
         Node *f = head;
         while(f != NULL &&  f->next != NULL)
         {
-                f=f->next->next;
+                
                 s=s->next;
+                f=f->next->next;
             
         }
         return s->data;
