@@ -6,18 +6,30 @@ using namespace std;
 class Solution
 {
 public:
+    
+    int set_count(int s)
+    {
+        int c = 0;
+        while(s>0)
+        {
+            s=s&(s-1);
+            c+=1;
+        }
+        return c;
+    }
+    
 	int is_bleak(int n)
 	{
+	   for(int i=1;i<n;i++)
+	   {
+	       if(i+set_count(i) == n){
+	           return 0;
+	       }
+	       
+	   }
+	   return 1;
+	   
 	    // Code here.
-	    for(int i=1;i<n;i++){
-	        int c=0,k=i;
-	        while(k>0){
-	            c+=1;
-	            k=k&(k-1);
-	        }
-	        if(i+c==n) return 0;
-	    }
-	    return 1;
 	}
 };
 
