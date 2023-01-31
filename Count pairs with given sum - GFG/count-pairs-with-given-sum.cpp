@@ -9,18 +9,22 @@ using namespace std;
 
 class Solution{   
 public:
-    int getPairsCount(int arr[], int n, int k) {
-        unordered_map <int,int> m;
-        int ans = 0;
-        for(int i=0;i<n;i++) {
-            int diff = k - arr[i];
-            if(m[diff])
-                ans += m[diff];
+    int getPairsCount(int arr[], int n, int k) 
+    {
+        map<int,int>m;
+        int c=0;
+        for(int i = 0 ; i < n ;i++)
+        {
+            int su = k-arr[i];
+            if(m.find(su)!=m.end())
+                c+=m[su];
             m[arr[i]]++;
         }
-        return ans;
+        return c;
+        // code here
     }
 };
+
 
 //{ Driver Code Starts.
 
