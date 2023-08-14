@@ -25,7 +25,6 @@ public:
             
         }
         
-        
         for(int i = 0; i<n ;i++)
         {
             if((nums[i]>>first_set)&1)
@@ -52,6 +51,7 @@ public:
         // Code here.
     }
 };
+
 
 //{ Driver Code Starts.
 int main(){
